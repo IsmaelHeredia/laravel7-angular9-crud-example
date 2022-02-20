@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div align="center">
+
+        <div class="card text-dark bg-light mb-3 contenedor">
+          <div class="card-header">Datos</div>
+          <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+          
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input 
+                        formControlName="nombre"
+                        id="nombre" 
+                        type="text" 
+                        class="form-control">
+                    <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
+                        <div *ngIf="f.nombre.errors.required">El nombre es requerido</div>
+                    </div>
+                </div>
+          
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea 
+                        formControlName="descripcion"
+                        id="descripcion" 
+                        type="text" 
+                        class="form-control">
+                    </textarea>
+                    <div *ngIf="f.descripcion.touched && f.descripcion.invalid" class="alert alert-danger">
+                        <div *ngIf="f.descripcion.errors.required">La descripción es requerida</div>
+                    </div>
+                </div>
+          
+                <div class="espacio"></div>
+                
+                <button class="btn btn-primary nbsp" type="submit" [disabled]="!form.valid">Guardar</button>
+                <a href="#" routerLink="/categoria/index" class="btn btn-primary">Atras</a>
+
+            </form>
+          </div>
+        </div>
+            
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+
+    <div align="center" *ngIf="this.cargado">
+
+        <div class="card text-dark bg-light mb-3 contenedor">
+          <div class="card-header">Datos</div>
+          <div class="card-body">
+            <div>
+                <strong>ID:</strong>
+                <p>{{ producto.id }}</p>
+            </div>
+           
+            <div>
+                <strong>Nombre:</strong>
+                <p>{{ producto.nombre_producto }}</p>
+            </div>
+     
+             <div>
+                <strong>Precio:</strong>
+                <p>{{ producto.precio }}</p>
+            </div>
+
+            <div>
+                <strong>Categoria:</strong>
+                <p>{{ producto.categoria_nombre }}</p>
+            </div>
+
+            <div>
+                <strong>Descripción:</strong>
+                <p>{{ producto.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+         
+        <div class="espacio"></div>
+
+        <a href="#" routerLink="/producto/index" class="btn btn-primary">Atras</a>
+
+    </div>
+   
+</div>

@@ -1,0 +1,73 @@
+<div class="container">
+
+    <div align="center" *ngIf="this.cargado">
+
+        <div class="card text-dark bg-light mb-3 contenedor">
+          <div class="card-header">Datos</div>
+          <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+          
+                <div class="form-group">
+                    <label for="nombre_producto">Nombre:</label>
+                    <input 
+                        formControlName="nombre_producto"
+                        id="nombre_producto" 
+                        type="text" 
+                        [(ngModel)]="producto.nombre_producto"
+                        class="form-control">
+                    <div *ngIf="f.nombre_producto.touched && f.nombre_producto.invalid" class="alert alert-danger">
+                        <div *ngIf="f.nombre_producto.errors.required">El nombre es requerido</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio:</label>
+                    <input 
+                        formControlName="precio"
+                        id="precio" 
+                        type="number" 
+                        [(ngModel)]="producto.precio"
+                        class="form-control">
+                    <div *ngIf="f.precio.touched && f.precio.invalid" class="alert alert-danger">
+                        <div *ngIf="f.precio.errors.required">El precio es requerido</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria_id">Categoria:</label>
+                    <select id="categoria_id" name="categoria_id" class="form-control" formControlName="categoria_id" [(ngModel)]="producto.categoria_id">    <option value="" selected disabled hidden>Seleccione una categoria</option>                            
+                        <option *ngFor="let categoria of categorias" value= "{{categoria.id}}">
+                        {{ categoria.nombre }}
+                    </select>
+                    <div *ngIf="f.categoria_id.touched && f.categoria_id.invalid" class="alert alert-danger">
+                        <div *ngIf="f.categoria_id.errors.required">La categoria es requerida</div>
+                    </div>
+                </div>
+                 
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea 
+                        formControlName="descripcion"
+                        id="descripcion" 
+                        type="text" 
+                        [(ngModel)]="producto.descripcion"
+                        class="form-control">
+                    </textarea>
+                    <div *ngIf="f.descripcion.touched && f.descripcion.invalid" class="alert alert-danger">
+                        <div *ngIf="f.descripcion.errors.required">La descripción es requerida</div>
+                    </div>
+                </div>
+
+                <br/>
+                
+                <button class="btn btn-primary nbsp" type="submit" [disabled]="!form.valid">Guardar</button>
+                <a href="#" routerLink="/producto/index" class="btn btn-primary">Atras</a>
+
+            </form>
+          </div>
+
+        </div>
+            
+    </div>
+
+</div>

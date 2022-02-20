@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.nbsp {
+  margin-right : 10px;
+}
+
+.mini-espacio {
+  margin-top: 1em;
+}
+
+.espacio {
+    margin-top: 2em;
+}
+
+.doble-espacio {
+    margin-top: 3em;
+}
+
+.boton-normal {
+    width: 110px;
+}
+
+.boton-largo {
+    width: 250px;
+}
+
+.boton-extra-largo {
+    width: 300px;
+}
+
+.contenedor {
+  margin-left: 20%;
+  margin-right: 20%;
+}

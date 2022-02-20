@@ -1,0 +1,8 @@
+{
+	"/api/*": {
+	  "target": "http://localhost/pruebastecnicas/sistema/backend/sistema/public",
+	  "secure": true,
+	  "logLevel":false,
+	  "changeOrigin": true
+	}
+}
